@@ -41,7 +41,7 @@ Example of valid choices:
 
    choices = (
        ('choice_1','label_1'),
-       ('choice_2','label_2)
+       ('choice_2','label_2')
    )
 
 ###2. Use your function with DynamicDropdownPanel

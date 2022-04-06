@@ -17,7 +17,7 @@ class DynamicDropdownPanel(FieldPanel):
         kwargs.update(
             field_name=self.field_name,
             dynamic_choices=self.dynamic_choices,
-            widget=self.widget if hasattr(self, 'widget') else None,
+            widget = None,
         )
         return kwargs
 

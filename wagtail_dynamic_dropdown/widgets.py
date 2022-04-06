@@ -1,6 +1,8 @@
 from django.forms.widgets import ChoiceWidget
 from django.apps import apps
 from importlib import import_module
+import errno
+import os
 
 
 class DynamicDropdownWidget(ChoiceWidget):
@@ -24,12 +26,13 @@ class DynamicDropdownWidget(ChoiceWidget):
     def __init__(self, attrs=None, dynamic_choices=()):
         super().__init__(attrs)
         # dynamic_choices can be function or path to function
-        if type(dynamic_choices).__name__ == 'function':
+        if type(dynamic_choices).__name__ == 'function' or type(dynamic_choices).__name__ == 'method':
             self.choices = dynamic_choices()
-        elif type(dynamic_choices) == str and apps.is_installed(dynamic_choices.split(".")[0]):
+        elif type(dynamic_choices) == str:
             module = import_module(dynamic_choices.rsplit(".",1)[0])
             function = getattr(module, dynamic_choices.rsplit(".",1)[1])
             self.choices = function()
+
             
 
     def get_context(self, name, value, attrs):
