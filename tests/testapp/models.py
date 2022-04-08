@@ -7,6 +7,7 @@ from django import forms
 
 
 class PageWithDynamicList(Page):
+    template = 'testapp/index.html'
     
     dynamic_list = models.CharField(max_length=255, blank=True, null=True)
 
@@ -16,6 +17,7 @@ class PageWithDynamicList(Page):
 
 
 class PageWithStaticList(Page):
+    template = 'testapp/index.html'
     
     dynamic_list = models.CharField(max_length=255, blank=True, null=True)
 

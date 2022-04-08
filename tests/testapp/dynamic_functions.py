@@ -1,4 +1,4 @@
-DYNAMIC_LIST = []
+DYNAMIC_LIST = [("choice_1", "label_1")]
 
 def return_dynamic_list():
     global DYNAMIC_LIST

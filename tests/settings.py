@@ -44,7 +44,7 @@ TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
         "DIRS": [
-            os.path.join(BASE_DIR, "templates"),
+            os.path.join(BASE_DIR, "tests", "testapp", "templates"),
         ],
         "OPTIONS": {
             "context_processors": [
@@ -77,3 +77,9 @@ ROOT_URLCONF = "tests.urls"
 WAGTAIL_SITE_NAME = ("Test App Site",)
 SITE_ID = 1
 STATIC_URL = "/static/"
+
+STATIC_ROOT = os.path.join(BASE_DIR, "tests", "static")
+STATIC_URL = '/static/'
+
+MEDIA_ROOT = os.path.join(BASE_DIR, "tests", "media")
+MEDIA_URL = '/media/'
