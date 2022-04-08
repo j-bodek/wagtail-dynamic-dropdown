@@ -20,6 +20,6 @@ class PageWithStaticList(Page):
     dynamic_list = models.CharField(max_length=255, blank=True, null=True)
 
     content_panels = Page.content_panels + [
-        DynamicDropdownPanel('dynamic_list', "tests.testapp.dynamic_functions.return_static_list", widget=forms.Select),
+        DynamicDropdownPanel('dynamic_list', "tests.testapp.dynamic_functions.return_static_list"),
     ]
 
