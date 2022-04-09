@@ -10,7 +10,7 @@ Install
 
 ::
 
-   pip install -i https://test.pypi.org/simple/ wagtail-dynamic-dropdown==0.0.1
+   pip install wagtail-dynamic-dropdown==0.0.1
 
 Then add ``wagtail_dynamic_dropdown`` to your installed apps:
 
