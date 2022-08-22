@@ -14,7 +14,21 @@ class DynamicDropdownPanel(FieldPanel):
         )
         return kwargs
 
-    def widget_overrides(self):
+    def widget_overrides(self): 
         return {
             self.field_name: DynamicDropdownWidget(dynamic_choices=self.dynamic_choices),
         }
+
+
+    def get_form_options(self):
+        """
+        Return a dictionary of attributes such as 'fields', 'formsets' and 'widgets'
+        which should be incorporated into the form class definition to generate a form
+        that this panel can use.
+        This will only be called after binding to a model (i.e. self.model is available).
+        """
+        options = super().get_form_options()
+        options['widgets'] = {
+            self.field_name: DynamicDropdownWidget(dynamic_choices=self.dynamic_choices),
+        }
+        return options
