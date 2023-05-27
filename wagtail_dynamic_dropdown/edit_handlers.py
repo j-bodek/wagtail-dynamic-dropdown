@@ -1,8 +1,8 @@
 from .widgets import DynamicDropdownWidget
-from wagtail.admin.edit_handlers import FieldPanel
+from wagtail.admin.panels import FieldPanel
+
 
 class DynamicDropdownPanel(FieldPanel):
-
     def __init__(self, field_name, dynamic_choices, *args, **kwargs):
         super().__init__(field_name, *args, **kwargs)
         self.dynamic_choices = dynamic_choices
@@ -14,11 +14,12 @@ class DynamicDropdownPanel(FieldPanel):
         )
         return kwargs
 
-    def widget_overrides(self): 
+    def widget_overrides(self):
         return {
-            self.field_name: DynamicDropdownWidget(dynamic_choices=self.dynamic_choices),
+            self.field_name: DynamicDropdownWidget(
+                dynamic_choices=self.dynamic_choices
+            ),
         }
-
 
     def get_form_options(self):
         """
@@ -28,7 +29,9 @@ class DynamicDropdownPanel(FieldPanel):
         This will only be called after binding to a model (i.e. self.model is available).
         """
         options = super().get_form_options()
-        options['widgets'] = {
-            self.field_name: DynamicDropdownWidget(dynamic_choices=self.dynamic_choices),
+        options["widgets"] = {
+            self.field_name: DynamicDropdownWidget(
+                dynamic_choices=self.dynamic_choices
+            ),
         }
         return options

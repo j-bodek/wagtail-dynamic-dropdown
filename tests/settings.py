@@ -6,7 +6,7 @@ SECRET_KEY = "SECRET_KEY"
 
 INSTALLED_APPS = [
     "wagtail.contrib.forms",
-    'wagtail.contrib.redirects',
+    "wagtail.contrib.redirects",
     "wagtail.embeds",
     "wagtail.sites",
     "wagtail.users",
@@ -79,7 +79,11 @@ SITE_ID = 1
 STATIC_URL = "/static/"
 
 STATIC_ROOT = os.path.join(BASE_DIR, "tests", "static")
-STATIC_URL = '/static/'
+STATIC_URL = "/static/"
 
 MEDIA_ROOT = os.path.join(BASE_DIR, "tests", "media")
-MEDIA_URL = '/media/'
+MEDIA_URL = "/media/"
+
+# Base URL to use when referring to full URLs within the Wagtail admin backend -
+# e.g. in notification emails. Don't include '/admin' or a trailing slash
+WAGTAILADMIN_BASE_URL = "http://localhost:8000"
