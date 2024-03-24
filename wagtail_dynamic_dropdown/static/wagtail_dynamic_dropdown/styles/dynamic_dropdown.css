@@ -18,17 +18,15 @@
     display:none
 }
 
-
 .select-box .options-container{
-    background: #EDFAFD;
     max-height: 0;
     width: calc(100%-2px);
     opacity: 0;
     transition: all 0.4s;
     border-radius: 8px;
+    border: 1px solid;
     overflow: hidden;
     order:1;
-    border: 1px solid #ADB5BD;
 }
 
 
@@ -49,20 +47,14 @@
 }
 
 .selected{
-    background: #fafafa;
     border-radius: 8px;
     margin-bottom: 8px;
+    border: 1px solid;
     position: relative;
     order:0;
     display:flex;
     align-items: center;
-    border: 1px solid #ADB5BD;
 }
-
-.selected.active{
-    background: #EDFAFD;
-}
-
 
 .option_wrap_label,
 .selected_text{
@@ -73,24 +65,24 @@
     font-size:18px
 }
 
-
 .options-container>.option-wrapper{
     padding:5px 10px;
     overflow-y:auto;
-    border-top:1px solid #ADB5BD;
     cursor:pointer;
     transition: background 0.2s ease;
-}
-.options-container>.option-wrapper:last-child{
-    border-bottom:0px !important;
+    border: 1px solid;
 }
 
 .option-wrapper:hover{
-    background: #B6EBF7;
+    background: #3b82f680;
 }
 
 .options-container>.option-wrapper.active{
-    background: #B6EBF7;
+    background: #3b82f680;
+}
+
+.options-container>.option-wrapper:last-child{
+    border-bottom:0px !important;
 }
 
 .select-box .option{
@@ -101,5 +93,3 @@
 .radio{
     display: none;
 }
-
-
